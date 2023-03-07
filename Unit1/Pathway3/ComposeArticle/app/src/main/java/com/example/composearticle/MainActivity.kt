@@ -24,12 +24,29 @@ import com.example.composearticle.ui.theme.ComposeArticleTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { }
+        setContent {
+            ComposeArticleTheme() {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    ComposeArticleApp()
+                }
+
+            }
+        }
     }
 }
 
 @Composable
-fun ComposeArticleApp() { }
+fun ComposeArticleApp() {
+    ArticleCard(
+        title = stringResource(R.string.title_jetpack_compose_tutorial),
+        shortDescription = stringResource(R.string.compose_short_desc),
+        longDescription = stringResource(R.string.compose_long_desc),
+        imagePainter = painterResource(R.drawable.bg_compose_background)
+    )
+}
 
 @Composable
 private fun ArticleCard(
@@ -39,10 +56,25 @@ private fun ArticleCard(
     imagePainter: Painter,
     modifier: Modifier = Modifier,
 ) {
-    Column() { }
+    Column(modifier) {
+        Image(painter = imagePainter, contentDescription = null)
+        Text(
+            text = title,
+            modifier = Modifier.padding(16.dp),
+            fontSize = 24.sp
+        )
+        Text(text = shortDescription, modifier = Modifier.padding(16.dp))
+        Text(
+            text = longDescription,
+            modifier = Modifier.padding(16.dp),
+            textAlign = TextAlign.Justify
+        )
+    }
 }
 
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() { }
+fun DefaultPreview() {
+    ComposeArticleApp()
+}
