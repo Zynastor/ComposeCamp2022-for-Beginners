@@ -63,7 +63,11 @@ private fun ArticleCard(
             modifier = Modifier.padding(16.dp),
             fontSize = 24.sp
         )
-        Text(text = shortDescription, modifier = Modifier.padding(16.dp))
+        Text(
+            text = shortDescription,
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+            textAlign = TextAlign.Justify
+        )
         Text(
             text = longDescription,
             modifier = Modifier.padding(16.dp),
@@ -76,5 +80,7 @@ private fun ArticleCard(
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ComposeArticleApp()
+    Surface {
+        ComposeArticleApp()
+    }
 }
