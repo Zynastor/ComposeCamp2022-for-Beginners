@@ -77,12 +77,13 @@ fun TopicCard(topic: Topic, modifier: Modifier = Modifier) {
                     Icon(
                         painterResource(R.drawable.ic_grain),
                         contentDescription = null,
-                        modifier=Modifier.padding(start=16.dp)
+                        modifier = Modifier.padding(start = 16.dp)
                     )
-                    Text(topic.availableCourse.toString(),
-                    style = MaterialTheme.typography.caption,
-                    modifier = Modifier.padding(8.dp))
-
+                    Text(
+                        topic.availableCourse.toString(),
+                        style = MaterialTheme.typography.caption,
+                        modifier = Modifier.padding(8.dp)
+                    )
                 }
             }
         }
