@@ -4,8 +4,6 @@ import android.content.res.Configuration
 import androidx.compose.animation.*
 import androidx.compose.animation.core.MutableTransitionState
 import androidx.compose.animation.core.Spring.DampingRatioLowBouncy
-import androidx.compose.animation.core.Spring.StiffnessHigh
-import androidx.compose.animation.core.Spring.StiffnessMedium
 import androidx.compose.animation.core.Spring.StiffnessVeryLow
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
