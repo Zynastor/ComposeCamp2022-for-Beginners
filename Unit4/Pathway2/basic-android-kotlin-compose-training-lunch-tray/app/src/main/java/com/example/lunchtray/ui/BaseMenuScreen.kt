@@ -15,22 +15,16 @@
  */
 package com.example.lunchtray.ui
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.RadioButton
-import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.material.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -46,15 +40,13 @@ fun BaseMenuScreen(
     onSelectionChanged: (MenuItem) -> Unit,
     modifier: Modifier = Modifier
 ) {
-
     var selectedItemName by rememberSaveable { mutableStateOf("") }
-
-    Column (modifier = modifier
-        .padding(16.dp)
-        .verticalScroll(rememberScrollState())
+    Column(
+        modifier = modifier
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState())
     ) {
         options.forEach { item ->
-
             MenuItemRow(
                 item = item,
                 selectedItemName = selectedItemName,
@@ -124,13 +116,14 @@ fun MenuScreenButtonGroup(
     selectedItemName: String,
     onCancelButtonClicked: () -> Unit,
     onNextButtonClicked: () -> Unit,
-    modifier: Modifier = Modifier) {
-    Row (
+    modifier: Modifier = Modifier
+) {
+    Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
-    ){
+    ) {
         OutlinedButton(modifier = Modifier.weight(1f), onClick = onCancelButtonClicked) {
             Text(stringResource(R.string.cancel).uppercase())
         }

@@ -40,7 +40,7 @@ fun EntreeMenuScreen(
 
 @Preview
 @Composable
-fun EntreeMenuPreview(){
+fun EntreeMenuPreview() {
     EntreeMenuScreen(
         options = DataSource.entreeMenuItems,
         onCancelButtonClicked = {},

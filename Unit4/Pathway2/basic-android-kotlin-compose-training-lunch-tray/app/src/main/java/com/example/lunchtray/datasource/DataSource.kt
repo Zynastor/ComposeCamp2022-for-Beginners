@@ -15,9 +15,7 @@
  */
 package com.example.lunchtray.datasource
 
-import com.example.lunchtray.model.MenuItem.AccompanimentItem
-import com.example.lunchtray.model.MenuItem.EntreeItem
-import com.example.lunchtray.model.MenuItem.SideDishItem
+import com.example.lunchtray.model.MenuItem.*
 
 /**
  * Map of available menu items to be displayed in the menu fragments.

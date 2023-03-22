@@ -15,11 +15,7 @@
  */
 package com.example.lunchtray.ui
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -53,6 +49,6 @@ fun StartOrderScreen(
 
 @Preview
 @Composable
-fun StartOrderPreview(){
+fun StartOrderPreview() {
     StartOrderScreen(onStartOrderButtonClicked = {})
 }
