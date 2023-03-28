@@ -41,7 +41,7 @@ class ReplyViewModel : ViewModel() {
      * Initializing mailbox emails by getting them from [LocalEmailsDataProvider]
      */
     private fun initializeUIState() {
-        var mailboxes: Map<MailboxType, List<Email>> =
+        val mailboxes: Map<MailboxType, List<Email>> =
             LocalEmailsDataProvider.allEmails.groupBy { it.mailbox }
         _uiState.value =
             ReplyUiState(
@@ -82,10 +82,6 @@ class ReplyViewModel : ViewModel() {
      * Update [currentMailbox]
      */
     fun updateCurrentMailbox(mailboxType: MailboxType) {
-        _uiState.update {
-            it.copy(
-                currentMailbox = mailboxType
-            )
-        }
+        _uiState.update { it.copy(currentMailbox = mailboxType) }
     }
 }
